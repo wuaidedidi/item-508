@@ -1,0 +1,13 @@
+target
+backend/target
+frontend/node_modules
+frontend/dist
+.git
+.idea
+.vscode
+.playwright-mcp
+repo
+repo.zip
+*.log
+*.png
+result.md
