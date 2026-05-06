@@ -31,6 +31,7 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y --no-install-recommends \
     bash \
     curl \
+    git \
     mysql-server \
     nginx \
     openjdk-17-jre-headless \
@@ -39,6 +40,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -f /etc/nginx/sites-enabled/default \
     && rm -rf /var/lib/apt/lists/*
 
+COPY . /app/
 COPY --from=backend-build /app/backend/target/*.jar /app/app.jar
 COPY --from=frontend-build /app/frontend/dist /usr/share/nginx/html
 COPY database/init.sql /docker-entrypoint-initdb.d/01-init.sql
