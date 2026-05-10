@@ -114,9 +114,8 @@ erDiagram
 ## 📁 项目结构
 
 ```
-个人健康管理系统/
+repo/
 ├── README.md                    # 项目文档
-├── Dockerfile                   # 单容器启动配置
 ├── start.sh                     # 容器启动脚本
 ├── backend/                     # Spring Boot 后端
 │   ├── pom.xml
@@ -156,14 +155,14 @@ erDiagram
 
 ---
 
-## 🚀 快速开始 (单 Dockerfile)
+## 🚀 快速开始 (外层 Dockerfile)
 
 ### 前置条件
 - 安装并运行 Docker
 
 ### 启动步骤
 
-1. 在 `个人健康管理系统/` 目录执行：
+1. 在外层环境目录执行，目录内应包含 `Dockerfile` 和 `repo/`：
    ```bash
    docker build -t health-management .
    ```
